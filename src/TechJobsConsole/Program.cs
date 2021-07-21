@@ -122,7 +122,11 @@ namespace TechJobsConsole
             {
                 
                 foreach (KeyValuePair<string, string> option in job)
-                {
+                if (option.Key.Equals(""))
+                    {
+                        Console.WriteLine("Invalid.");
+                    } else {
+
                     Console.WriteLine(option.Key + ": " + option.Value);
                 }
                 Console.WriteLine("\n******\n");
