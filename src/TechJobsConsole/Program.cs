@@ -100,16 +100,24 @@ namespace TechJobsConsole
                 }
 
                 string input = Console.ReadLine();
-                choiceIdx = int.Parse(input);
+                bool isInt = int.TryParse(input, out choiceIdx);
 
-                if (choiceIdx < 0 || choiceIdx >= choiceKeys.Length)
+                if (isInt)
                 {
-                    Console.WriteLine("Invalid choices. Try again.");
-                }
+                    if (choiceIdx < 0 || choiceIdx >= choiceKeys.Length)
+                    {
+                        Console.WriteLine("Invalid choices. Try again.");
+                    }
+                    else
+                    {
+                        isValidChoice = true;
+                    }
+                } 
                 else
                 {
-                    isValidChoice = true;
+                    Console.WriteLine("Invalid choice. Try again.");
                 }
+                
 
             } while (!isValidChoice);
 
