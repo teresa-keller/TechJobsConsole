@@ -138,5 +138,25 @@ namespace TechJobsConsole
 
             return rowValues.ToArray();
         }
+
+        public static List<Dictionary<string, string>> FindByValue(string value)
+        {
+            LoadData();
+
+            List<Dictionary<string, string>> valueSearchResults = new List<Dictionary<string, string>>();
+
+            foreach (Dictionary<string, string> job in AllJobs)
+            {
+                foreach (KeyValuePair<string, string> jobValue in job)
+                {
+                    if (jobValue.Value.Contains(value))
+                    {
+                        valueSearchResults.Add(job);
+                    }
+                    
+                }
+            }
+            return valueSearchResults;
+        }
     }
 }
