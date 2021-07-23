@@ -149,7 +149,8 @@ namespace TechJobsConsole
             {
                 foreach (KeyValuePair<string, string> jobValue in job)
                 {
-                    if (jobValue.Value.Contains(value))
+                    string searchValue = jobValue.Value;
+                    if (searchValue.ToLower().Contains(value))
                     {
                         valueSearchResults.Add(job);
                     }
