@@ -126,9 +126,16 @@ namespace TechJobsConsole
 
         private static void PrintJobs(List<Dictionary<string, string>> someJobs)
         {
+            if (someJobs.Count.Equals(0))
+            {
+                Console.WriteLine("Search term not found.");
+            }
             foreach (Dictionary<string, string> job in someJobs)
             {
-                
+                if (job.ContainsKey(""))
+                {
+                    Console.WriteLine("Invalid.");
+                }
                 foreach (KeyValuePair<string, string> option in job)
                 if (option.Key.Equals(""))
                     {
