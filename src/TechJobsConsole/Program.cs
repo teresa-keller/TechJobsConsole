@@ -132,16 +132,9 @@ namespace TechJobsConsole
             }
             foreach (Dictionary<string, string> job in someJobs)
             {
-                if (job.ContainsKey(""))
-                {
-                    Console.WriteLine("Invalid.");
-                }
+   
                 foreach (KeyValuePair<string, string> option in job)
-                if (option.Key.Equals(""))
-                    {
-                        Console.WriteLine("Invalid.");
-                    } else {
-
+                {
                     Console.WriteLine(option.Key + ": " + option.Value);
                 }
                 Console.WriteLine("\n******\n");
